@@ -1,0 +1,20 @@
+Footer{
+	background: $theme-green-dark;
+
+	.wrap{
+		padding: $gutter-xlg-2 0;
+		gap: $gutter-md-5;
+
+	}
+	.contact{
+		gap: $gutter-md-4;
+		flex-wrap: wrap;
+	}
+	.copyRight{
+		padding: $gutter-sm-2 0 $gutter-md-5;
+		font-family: $default-mono-font;
+	}
+	.logo{
+		margin: 0;
+	}
+}
