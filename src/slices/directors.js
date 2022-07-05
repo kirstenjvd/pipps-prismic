@@ -19,7 +19,7 @@ export const Directors = ({ slice }) => {
   return (
     <section className="Faculty" id="Directors">
       <div className="Container">
-        <h2>Scienific Co-Directors</h2>
+        <h2>{slice.primary.header}</h2>
         <div className="directors flex f-wrap j-btwn">
           {slice.items.map((item,index) => (  
             <div className="w-5 flex-col j-btwn" key={`director-${index}`}>

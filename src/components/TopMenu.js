@@ -40,9 +40,11 @@ export const TopMenu = ({ topMenu, activeDocMeta }) => {
         <div className="wrap flex j-btwn a-cntr">
           <input id="menu-toggle" type="checkbox" tabIndex="0" />
           <AnchorLink href="#Hero" className="logo-wrap">
-            <img src={LogoTop} alt="PIPPS Logo" className="logo top" style={logo==="LogoTop" ?  hideLogo.visible : hideLogo.hidden}/> 
-            <img src={LogoSticky} alt="PIPPS Logo" className="logo sticky"style={logo==="LogoSticky" ?  hideLogo.visible : hideLogo.hidden}/>
-            <img src={LogoMobile} className="logo mobile" alt="PIPPS Logo"/>
+            <img src={topMenu.logo?.url} alt="PIPPS Logo" className="logo top" style={logo==="LogoTop" ?  hideLogo.visible : hideLogo.hidden}/> 
+            <img src={topMenu.logo_alt?.url} alt="PIPPS Logo" className="logo sticky"style={logo==="LogoSticky" ?  hideLogo.visible : hideLogo.hidden}/>
+            <img src={topMenu.logo_mobile?.url} className="logo mobile" alt="PIPPS Logo"/>
+
+
           </AnchorLink>
           
           
@@ -52,13 +54,15 @@ export const TopMenu = ({ topMenu, activeDocMeta }) => {
           </label>
           <nav className="menu">
             <div className="nav flex j-btwn">
-              <AnchorLink href="#About" tabIndex="0">ABOUT</AnchorLink>
-              <AnchorLink href="#Faculty" tabIndex="0">TEAM</AnchorLink>
-              <AnchorLink href="#Affiliations" tabIndex="0">RESOURCES</AnchorLink>
+              {topMenu.menu_links.map((item,index) => (
+                <AnchorLink href={`#${item.section_id}`} tabIndex="0" key={`menu-${index}`}>{item.link_label}</AnchorLink>
+              ))}
             </div>
             <div className="contact flex j-btwn">
-              <a className="nav_twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/bc_eppi?s=20&t=ws5BLFxlpmAe2r-qr25bkg" tabIndex="0">@PIPPS</a>
-              <a className="nav_email" href="mailto:PIPPS@SFU.CA" target="_blank" rel="noopener noreferrer" tabIndex="0">PIPPS@SFU.CA</a>
+              {topMenu.twitter && 
+                <a className="nav_twitter" target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${topMenu.twitter}`} tabIndex="0">{topMenu.twitter}</a>
+              }
+              <a className="nav_email" href={`mailto:${topMenu.email}`} target="_blank" rel="noopener noreferrer" tabIndex="0">{topMenu.email}</a>
             </div>
           </nav>
         </div>
@@ -72,5 +76,22 @@ export const query = graphql`
     _previewable
     type
     lang
+    data {
+      email
+      logo {
+        url
+      }
+      logo_mobile{
+        url
+      }
+      logo_alt{
+        url
+      }
+      menu_links {
+        link_label
+        section_id
+      }
+      twitter
+    }
   }
 `

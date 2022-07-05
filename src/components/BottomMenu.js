@@ -10,10 +10,12 @@ export const BottomMenu = ({ bottomMenu}) => {
     <footer>
       <div className="Container">
         <div className="wrap flex j-btwn a-cntr f-wrap">
-          <img src={Logo} alt="PIPPS Logo" className="logo"/>
+          <img src={bottomMenu.logo?.url} alt="PIPPS Logo" className="logo"/>
           <div className="contact flex j-btwn">
-            <a className="nav_twitter t-white" target="_blank" rel="noopener noreferrer" href="https://twitter.com/bc_eppi?s=20&t=ws5BLFxlpmAe2r-qr25bkg">@PIPPS</a>
-            <a className="nav_email t-white" target="_blank" rel="noopener noreferrer" href="mailto:PIPPS@SFU.CA">PIPPS@SFU.CA</a>
+            {bottomMenu.twitter && 
+              <a className="nav_twitter t-white" target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${bottomMenu.twitter}`} tabIndex="0">{bottomMenu.twitter}</a>
+            }
+              <a className="nav_email t-white" href={`mailto:${bottomMenu.email}`} target="_blank" rel="noopener noreferrer" tabIndex="0">{bottomMenu.email}</a>
           </div>
         </div>
       </div>
@@ -26,5 +28,12 @@ export const query = graphql`
     _previewable
     type
     lang
+    data {
+      email
+      twitter
+      logo {
+        url
+      }
+    }
   }
 `
