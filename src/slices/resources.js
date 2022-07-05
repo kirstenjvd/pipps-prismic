@@ -25,10 +25,10 @@ export const Resources = ({ slice }) => {
         </div>
       </div>
       <div className="bg cog-1">
-        <img src={Cog1} alt=""/>
+        <img src={Cog1} role="presentation" alt=""/>
       </div>
       <div className="bg cog-2">
-        <img src={Cog2} alt=""/>
+        <img src={Cog2} role="presentation" alt=""/>
       </div>
     </section>
   )

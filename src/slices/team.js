@@ -12,16 +12,16 @@ export const Team = ({ slice }) => {
        <div className={showMore? "team___bio expanded" : "team___bio short"}>
           <PrismicRichText field={bio.richText}/>
         </div>
-        <a onClick={() => setShowMore(!showMore)} className="readMore">{showMore ? "Read Less" : "Read More"}</a>
+        <button onClick={() => setShowMore(!showMore)} className="readMore">{showMore ? "Read Less..." : "Read More..."}</button>
       </>
     )
   }
   
   return (
-    <section className="Faculty" id="Team">
+    <section className="Faculty">
       <div className="Container">
         <h2>{slice.primary.header}</h2>
-        <div className="team flex f-wrap j-btwn ">
+        <div className="team flex f-wrap j-btwn grey-border">
           {slice.items.map((item,index) => (
             <div className="member flex-col" key={`team-${index}`}>
               <div className="img-wrap">

@@ -12,12 +12,12 @@ export const Directors = ({ slice }) => {
        <div className={showMore? "expanded" : "short"}>
           <PrismicRichText field={bio.richText}/>
         </div>
-        <a onClick={() => setShowMore(!showMore)} className="readMore">{showMore ? "Read Less" : "Read More"}</a>
+        <button onClick={() => setShowMore(!showMore)} className="readMore">{showMore ? "Read Less..." : "Read More..."}</button>
       </>
     )
   }
   return (
-    <section className="Faculty" id="Directors">
+    <section className="Faculty" id="Team">
       <div className="Container">
         <h2>{slice.primary.header}</h2>
         <div className="directors flex f-wrap j-btwn">
@@ -35,7 +35,7 @@ export const Directors = ({ slice }) => {
                 <h3>{item.name}</h3>
                 <div className="contact">
                   <PrismicLink href={`https://twitter.com/${item.twitter_name}`}><p className="twitter">{item.twitter_name}</p></PrismicLink>
-                  <PrismicLink href={`mailto:${item.email}`}><p className="email">{item.email}</p></PrismicLink>
+                   {item.email && <PrismicLink href={`mailto:${item.email}`}><p className="email">{item.email}</p></PrismicLink> }
                 </div>
                 <h4>BIO</h4>
                 {item.bio_copy?.text?.length > 10 ? readMore(item.bio_copy) : null}
