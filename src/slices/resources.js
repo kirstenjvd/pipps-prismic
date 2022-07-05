@@ -7,7 +7,7 @@ import Cog2 from "../images/BG Cog 2.svg"
 
 export const Resources = ({ slice }) => {
   return (
-    <section className="Affiliation" id="resources">
+    <section className="Affiliation" id="Resources">
       <div className="Container">
         <div className="w-10 resources">
           <h2>{slice.primary.header}</h2>
