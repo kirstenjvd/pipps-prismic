@@ -1,11 +1,11 @@
-import { About } from "./About"
-import { Mission } from "./Mission"
-import { Directors } from "./Directors"
-import { Team } from "./Team"
-import { Functions } from "./Functions"
-import { Framework } from "./Framework"
-import { Affiliations } from "./Affiliations"
-import { Resources } from "./Resources"
+import { About } from "./about"
+import { Mission } from "./mission"
+import { Directors } from "./directors"
+import { Team } from "./team"
+import { Functions } from "./functions"
+import { Framework } from "./framework"
+import { Affiliations } from "./affiliations"
+import { Resources } from "./resources"
 
 export const components = {
   about: About,
