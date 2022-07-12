@@ -72,12 +72,15 @@ Header{
 	}
 
 	#menu-toggle {
-	  opacity: 0;
-	  position: absolute;
-	  
-	  width: 30px;
-	  height: 30px;
-	  display: flex;
+    position: absolute;
+    width: 30px;
+    right: 19px;
+    height: 30px;
+    border: #fff;
+    background: #fff;
+    display: none; 
+    -webkit-appearance: none;
+
 	}
 
 	.menu-button,
@@ -131,6 +134,10 @@ Header{
 		input[type="checkbox"]:focus + label {
 		  outline:2px solid $theme-green-dark;
 		  
+		}
+		
+		#menu-toggle {
+				display: block; 
 		}
 
 		.menu-button-container {

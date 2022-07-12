@@ -38,7 +38,6 @@ export const TopMenu = ({ topMenu, activeDocMeta }) => {
     <header className="header-section"   >
       <div className="Container">
         <div className="wrap flex j-btwn a-cntr">
-          <input id="menu-toggle" type="checkbox" tabIndex="0" />
           <AnchorLink href="#Hero" className="logo-wrap">
             <img src={topMenu.logo?.url} alt="PIPPS Logo" className="logo top" style={logo==="LogoTop" ?  hideLogo.visible : hideLogo.hidden}/> 
             <img src={topMenu.logo_alt?.url} alt="PIPPS Logo" className="logo sticky"style={logo==="LogoSticky" ?  hideLogo.visible : hideLogo.hidden}/>
@@ -50,8 +49,10 @@ export const TopMenu = ({ topMenu, activeDocMeta }) => {
           
           
           <label className='menu-button-container' htmlFor="menu-toggle" >
+            <span class="visuallyHidden">Press the spacebar for Mobile Menu</span>
             <div className='menu-button' ></div>
           </label>
+          <input id="menu-toggle" type="checkbox" tabIndex="0" />
           <nav className="menu">
             <div className="nav flex j-btwn">
               {topMenu.menu_links.map((item,index) => (
